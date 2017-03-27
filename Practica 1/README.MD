@@ -1,4 +1,4 @@
-#Practica 1 | Preparación de herramientas
+# Practica 1 | Preparación de herramientas
 
 En esta practica hemos creado dos máquinas virtuales con ubuntu server. Además
 he podido instalar LAMP sin necesidad de usar apt-get, en el instalador ya
