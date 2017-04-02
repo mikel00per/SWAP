@@ -13,15 +13,19 @@ cierto tiempo manteniendo sí la integridad.
 Una de las formas de sincronizar informaciónentre dos máquinas sería enviar por ssh 
 de una maquina a otra, en un comprimido, aquello que deseemos, para ello usaremos la 
 orden:
+
     tar czf - directorio | ssh equipodestino 'cat > ~/tar.tgz'
 
 Aquí está un ejemplo, recordar que la ip de las máquinas son 192.168.1.111 y 192.168.1.222,
 respectivamente. 
 
-![tar-ssh](https://github.com/mikel00per/SWAP/blob/master/Practica%201/interfacespng.png)
+    ![tar-ssh](https://github.com/mikel00per/SWAP/blob/master/Practica%202/comprimido-ssh.png)
 
 Esto no sirve para mover grandes volúmenes de información por lo que será necesario usar 
 la orden rsync que se usa en entornos reales. 
+
+## Clonando contenido entre máquinas
+La otra forma de copiar grandes volúmenes de información es usando 
 
 ![](http://www.ubuntugeek.com/step-by-step-ubuntu-12-04-precise-lamp-server-setup.html)
 
