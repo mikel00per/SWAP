@@ -51,7 +51,7 @@ Tras esto es conveniente reiniciar el servicio o hacer un reboot
 adaptador 1 es una NAT perderemos el intertnet por lo que habrá que poner en el adaptador 1
 Red NAT y recargar la dirección MAC aunque no será necesario tener internet. 
 
-Aquí podemos ver que los cambios han surtido efeccto: 
+Aquí podemos ver que los cambios han surtido efecto: 
 
 ![curl](https://github.com/mikel00per/SWAP/blob/master/Practica%201/ifconfig.png)
 
@@ -60,7 +60,7 @@ podremos hacer acceder a la dirección ip que hemos configurado anteriormente. L
 hacer es crear un archivo, hola.html en el directorio "/var/www/html/". Tras esto ejecutar el comando como vemos
 en la imagen. 
 
-![curl](https://github.com/mikel00per/SWAP/blob/master/Practica%201/ipscambiadas_y_cur.png)
+![ip-cambiadas-curl](https://github.com/mikel00per/SWAP/blob/master/Practica%201/ipscambiadas_y_cur.png)
 
 ## Estado del servidor apache. 
 Por último para saber el estado del servidor apache he ejecutado: apache2 -v y ps aux | grep apache.
