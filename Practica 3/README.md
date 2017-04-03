@@ -69,7 +69,7 @@ Editamos pues el contenido de /etc/nginx/conf.d/default.conf con lo siguiente:
 En mi caso la ip del server serán 192.168.1.111 y 192.168.1.222, un ejemplo real
 de esto es el siguiente:
 
-![curl](https://github.com/mikel00per/SWAP/blob/master/Practica%201/interfacespng.png)
+![config-nginx](https://github.com/mikel00per/SWAP/blob/master/Practica%203/configuracion_nginx.png)
 
 Para probar que esto funciona deberemos de usar el comando de cURL hacia nuestras
 máquinas para ver si estas se están viendo.
@@ -83,7 +83,7 @@ ambos index para que se aprecie la diferencia al hacer el curl.
 
 ![cURL-nexinx](https://github.com/mikel00per/SWAP/blob/master/Practica%203/cURL-neginx.png)
 
-#### Otras opciones para nginx
+### Otras opciones para nginx
 Podremos añadir diferentes características a nginx. Si queremos que las máquinas
 soporte más carga de trabajo usaremos una configuración como esta:
 
@@ -116,4 +116,6 @@ Entre otras muchas opciones que podemos encontrar en el guión del pdf.
 En mi entorno la máquina 1 ha de recibir el doble de las peticiones que la
 máquina dos por lo que la configuración deberemos establecer el weight a 2 y 1
 respectivamente. Además he sumado en una las configuraciones citadas hasta el
-momento. 
+momento.
+
+[!config-nginx2](https://github.com/mikel00per/SWAP/blob/master/Practica%203/confinguracion-nginx-2.png)
