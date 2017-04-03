@@ -11,7 +11,7 @@ De esta forma conseguiremos una infraestructura redundante y de alta disponibili
 ## Crear máquina balanceadora.
 Lo primero que debemos hacer es crear una nueva máquina virtual que servirá
 para balancear la carga entre nuestras dos máquinas servidoras. Para ello
-deberemos seguir el tutorial que se ve en el [guion uno](http://www.ubuntugeek.com/step-by-step-ubuntu-12-04-precise-lamp-server-setup.html)
+deberemos seguir el tutorial que se ve en el [guion uno](https://github.com/mikel00per/SWAP/tree/master/Practica%201)
 a diferencia de que ya no queremos un sevidor LAMP por lo que unicamente necesitaremos
 instalar el ssh, las librerias comunes de linux y DNS (esto cuando instalemos
 ubuntu en nuestro disco virtual).
@@ -19,13 +19,16 @@ ubuntu en nuestro disco virtual).
 **Nota:** Será necesario que esta máquina tenga red interna y conexion a internet
 para instalar las herramientas que necesitemos más adelante.
 
+**Nota 2:** Es muy importante añadir la interfaz de red interna enp0s8 al archivo
+/etc/network/interfaces
+
 ## Instalación de nginx
 Para instalarlo lo haremos por el protocolo normal en Ubuntu:
 
     sudo apt-get update && sudo apt-get upgrade &&
     sudo apt-get install nginx
 
-*NOTA*: Es importante que el puerto 80 esté libre por eso no deberemos tener
+**Nota**: Es importante que el puerto 80 esté libre por eso no deberemos tener
 ningún programa o proceso que esté haciendo uso de él. Es por ello que no hemos
 instalado LAMP en esta máquina, aparte de no ser necesario.
 
@@ -42,8 +45,8 @@ configuraciones del directorio conf.d
 Editamos pues el contenido de /etc/nginx/conf.d/default.conf con lo siguiente:
 
     upstream apaches {
-      server 172.16.168.130;
-      server 172.16.168.131;
+      server xxx.xxx.x.xxx; # Máquina 1
+      server xxx.xxx.x.xxx; # Máquina 2
     }
 
     server{
@@ -64,3 +67,8 @@ Editamos pues el contenido de /etc/nginx/conf.d/default.conf con lo siguiente:
     }
 
 En mi caso la ip del server serán 192.168.1.111 y 192.168.1.222
+
+![curl](https://github.com/mikel00per/SWAP/blob/master/Practica%201/interfacespng.png)
+
+Para probar que esto funciona deberemos de usar el comando de cURL hacia nuestras
+máquinas para ver si estas se están viendo. Hay que descar que
