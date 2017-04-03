@@ -118,4 +118,4 @@ máquina dos por lo que la configuración deberemos establecer el weight a 2 y 1
 respectivamente. Además he sumado en una las configuraciones citadas hasta el
 momento.
 
-[!config-nginx2](https://github.com/mikel00per/SWAP/blob/master/Practica%203/confinguracion-nginx-2.png)
+![config-nginx2](https://github.com/mikel00per/SWAP/blob/master/Practica%203/confinguracion-nginx-2.png)
