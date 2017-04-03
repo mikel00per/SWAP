@@ -74,7 +74,7 @@ Para programar tareas para nuestro usuario deberemos usar el comando
 El formato para indicar el tiempo en el que se debe ejecutar una tarea el siguiente:
 
     # m h dom mon dow user command
-    #
+    # 
     # m corresponde al minuto en que se va a ejecutar el script, el valor va de 0 a 59
     # h la hora exacta, se maneja el formato de 24 horas, los valores van de 0 a 23, siendo 0 las 12:00 de la medianoche.
     # hace referencia al día del mes, por ejemplo se puede especificar 15 si se quiere ejecutar cada dia 15
@@ -101,4 +101,4 @@ máquina 2 a la máquina 1 podremos automatizar la tarea. Aquí lo muestro.
 
 ![rysnc-cron](https://github.com/mikel00per/SWAP/blob/master/Practica%202/Archivo-cront-editado.png)
 
-*Nota:* La orden superior a la de rsync añade cada minuto el comentario *Practica2!!* en un fichero.
+**Nota:** La orden superior a la de rsync añade cada minuto el comentario *Practica2!!* en un fichero.
