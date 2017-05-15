@@ -116,7 +116,7 @@ En mi entorno la máquina 1 ha de recibir el doble de las peticiones que la
 máquina dos por lo que la configuración deberemos establecer el weight a 2 y 1
 respectivamente.
 
-![config-nginx2](https://github.com/mikel00per/SWAP/blob/master/Practica%203/confinguracion-nginx-2.png)
+![config-nginx2](https://github.com/mikel00per/SWAP/blob/master/Practica%203/configuracion_nginx-2.png)
 
 Es muy importante eliminar el archivo /etc/nginx/sites-enables/default ya
 que sino continuamente nos aparecerá la página de inicio de nginx
@@ -170,7 +170,7 @@ usar, en este caso el 80, que es el de por defecto
 
 Aquí un ejemplo de como lo he configurado en mi máquina balanceadora
 
-![confi-haproxy](https://github.com/mikel00per/SWAP/blob/master/Practica%203/confin-haproxy.png)
+![confi-haproxy](https://github.com/mikel00per/SWAP/blob/master/Practica%203/confi-haproxy.png)
 
 Una vez modificado nuestro archivo de configuración deberemos reiniciar el
 servicio cargando la configuración nueva con la siguiente orden.
@@ -182,7 +182,7 @@ ficheros en ambos servidores llamado haproxy, exatamente como la prueba del
 nginx, tras esto haremos curl a nuestra máquina balanceadora para ver si
 funciona.
 
-    curl http;//ipMaquinaBalanceadora/haproxy.html
+    curl http://ipMaquinaBalanceadora/haproxy.html
 
 ![prueba-haproxy](http://github.com/mikel00per/SWAP/blob/master/Practica%203/confin-haproxy.png)
 
@@ -214,5 +214,5 @@ Así podré consultar los resultados desde el fichero de texto ya que por termin
 se pierde, además podremos generar un csv para poder generar una grafica con los
 resultado.
 
-![prueba-nginx](http://github.com/mikel00per/)
-![prueba-nginx2](http://github.com/mikel00per/)
+![prueba-nginx](https://github.com/mikel00per/SWAP/blob/master/Practica%203/pruebaABngix1.png)
+![prueba-nginx2](https://github.com/mikel00per/SWAP/blob/master/Practica%203/pruebaABngix2.png)
