@@ -4,9 +4,8 @@ tengamos un balanceador que reparta la carga entre varios servidores finales.
 
 El problema a solucionar es la sobrecarga de los servidores. Se puede balancear
 cualquier protocolo, pero dado que esta asignatura se centra en las tecnologías web,
-balancearemos los servidores HTTP que tenemos configurados.
-
-De esta forma conseguiremos una infraestructura redundante y de alta disponibilidad.
+balancearemos los servidores HTTP que tenemos configurados. De esta forma
+conseguiremos una infraestructura redundante y de alta disponibilidad.
 
 ## Crear máquina balanceadora.
 Lo primero que debemos hacer es crear una nueva máquina virtual que servirá
@@ -115,7 +114,105 @@ Entre otras muchas opciones que podemos encontrar en el guión del pdf.
 
 En mi entorno la máquina 1 ha de recibir el doble de las peticiones que la
 máquina dos por lo que la configuración deberemos establecer el weight a 2 y 1
-respectivamente. Además he sumado en una las configuraciones citadas hasta el
-momento.
+respectivamente.
 
 ![config-nginx2](https://github.com/mikel00per/SWAP/blob/master/Practica%203/confinguracion-nginx-2.png)
+
+Es muy importante eliminar el archivo /etc/nginx/sites-enables/default ya
+que sino continuamente nos aparecerá la página de inicio de nginx
+
+    sudo rm /etc/nginx/sites-enables/default
+
+Aquí un ejemplo real de como el balanceador distribuye las peticiones entre
+la máquina1 y máquina2, en ambas existen dos archivos distintos con distintos
+mensajes.
+
+![prueba-nginx](https://github.com/mikel00per/SWAP/blob/master/Practica%203/prueba-nginx-weight.png)
+
+## Instalación de haproxy
+Para instalarlo lo haremos por el protocolo normal en Ubuntu:
+
+    sudo apt-get update && sudo apt-get upgrade &&
+    sudo apt-get install nginx
+
+Es importante tener en cuenta que es necesario parar el servicio de nginx si
+lo tenemos instalado o cualquier proceso que ocupe el puerto 80.
+
+    sudo /etc/init.d/nginx stop
+
+## Configurando haproxy
+Una vez instalado haproxy pasamos a configurarlo, para hacerlo debemos editar
+el archivo /etc/haproxy/haproxy.cfg
+
+    sudo nano /etc/haproxy/haproxy.cfg
+
+Que deberemos borrar y añadir la siguiente configuración que es más simple,
+además como podemos observar indicamos explicitamente el puerto que queremos
+usar, en este caso el 80, que es el de por defecto
+
+    global
+      daemon
+      maxconn 256
+
+    defaults
+      mode http
+      timeout connect 4000
+      timeout client 42000
+      timeout server 43000
+
+    frontend http-in
+      bind \*:80
+      default_backend servers
+
+    backend servers
+      server m1 xxx.xxx.x.xxx:80 maxconn 32
+      server m2 xxx.xxx.x.xxx:80 maxconn 32
+
+Aquí un ejemplo de como lo he configurado en mi máquina balanceadora
+
+![confi-haproxy](https://github.com/mikel00per/SWAP/blob/master/Practica%203/confin-haproxy.png)
+
+Una vez modificado nuestro archivo de configuración deberemos reiniciar el
+servicio cargando la configuración nueva con la siguiente orden.
+
+    sudo /usr/sbin/haproxy -f /etc/haproxy/haproxy.cfg
+
+Para probar que nuestra configuración funciona correctamente crearemos unos
+ficheros en ambos servidores llamado haproxy, exatamente como la prueba del
+nginx, tras esto haremos curl a nuestra máquina balanceadora para ver si
+funciona.
+
+    curl http;//ipMaquinaBalanceadora/haproxy.html
+
+![prueba-haproxy](http://github.com/mikel00per/SWAP/blob/master/Practica%203/confin-haproxy.png)
+
+## Probando a fondo nuestro balanceador
+Para probar nuestro balanceador vamos a usar Apache Benchmark desde otra máquina
+nueva que hará peticiones a nuestro balanceador y él se encargará de dirigirlas
+a un lugar u otro. Para ello usaremos nginx ya que lo hemos configurado
+ligeramente más.
+
+Para la nueva máquina deberemos instalar Apache ya que la herramienta (comando)
+ab (Apache Benchmark) viene dentro de este. He creado la máquina de la misma
+forma que describo en la practica 1.
+
+Una vez tengamos la máquina y configurada la red interna deberemos usar el
+comando ab de la siguiente forma:
+
+    ab -n 1000 -c 10 http://ipMaquinaBalanceadora/<archivo>.html
+
+    -n indica el número de peticiones
+    -c indica que las peticiones se harán concurrentemente, de 10 en 10
+
+
+Aquí un ejemplo de la ejecución del comando en el entorno personal que he
+estado describiendo hasta ahora. El comando ejecutado ha sido
+
+    ab -g resultado.csv -n 1000 -c 10 http://192.168.1.233 > ab-text.txt
+
+Así podré consultar los resultados desde el fichero de texto ya que por terminal
+se pierde, además podremos generar un csv para poder generar una grafica con los
+resultado.
+
+![prueba-nginx](http://github.com/mikel00per/)
+![prueba-nginx2](http://github.com/mikel00per/)
