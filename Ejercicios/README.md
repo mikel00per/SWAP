@@ -185,7 +185,7 @@ Los métodos usados para Brocade ServerIron ADX 1000 son:
 6. Dynamic-Weighted Direct
 7. Dynamic-Weighted Reverse
 
-Más información (aqui)[http://community.brocade.com/t5/Application-Delivery-ADX/Load-Balancing-Distribution-Predictors-with-ServerIron/ta-p/3839]
+Más información [aqui](http://community.brocade.com/t5/Application-Delivery-ADX/Load-Balancing-Distribution-Predictors-with-ServerIron/ta-p/3839)
 
 Por otro lado para Cisco CSS 11501:
 1. Round Robin
@@ -194,7 +194,7 @@ Por otro lado para Cisco CSS 11501:
 4. ArrowPoint Content Aware (ACA)
 5. Otros: urlhash, domainhash, url, domain, srcip, and destip
 
-Más información (aqui)[http://www.cisco.com/c/en/us/support/docs/application-networking-services/css-11500-series-content-services-switches/28862-methods-load-bal.html#services]
+Más información [aqui](http://www.cisco.com/c/en/us/support/docs/application-networking-services/css-11500-series-content-services-switches/28862-methods-load-bal.html#services)
 
 
 **Ejercicio 4**: Instala y configura en una máquina virtual el balanceador
