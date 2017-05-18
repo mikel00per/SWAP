@@ -2,6 +2,10 @@
 Asignatura de SWAP cursada en 2017 con Pedro Castillo. Y cursada por
 Antonio Miguel Morillo Chica.
 
+## Ejercicios
+Ejercicios de las clases de teoría. Los ejercicios se pueden encontrar en las
+transparencias.
+
 ## Practica 1 | Preparación de herramientas
 Crearemos dos máquinas virtuales con ubuntu server que deberán poder comunicarse
 internamente. Modificaremos pues las ips para que sean distintas y estáticas.
@@ -21,7 +25,8 @@ cualquier protocolo, pero dado que esta asignatura se centra en las tecnologías
 balancearemos los servidores HTTP que tenemos configurados.
 De esta forma conseguiremos una infraestructura redundante y de alta disponibilidad.
 
-## Practica 4 |
+## Practica 4 | Asegurar la granja web
+El objetivo de esta práctica es llevar a cabo la configuración de seguridad de la granja web. Para ello, llevaremos a cabo las siguientes tareas para ello instalaremos un certificado SSL para configurar le aceso HTTPS a los servidores y configuraremos el cortafuegos.
 
 ## Practica 5 |  
 
