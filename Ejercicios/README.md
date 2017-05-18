@@ -162,13 +162,13 @@ fáciles de ampliar.
 balanceadores hardware específicos. Compara las prestaciones que ofrecen unos y
 otros.
 
-                  |  Cisco CSS 11501                            | Brocade ServerIron ADX 1000                |
------------------ | ----------------------------------------    | ------------------------------------------ |
-Precio            |  £4.019.99                                  |  £6,479.99                                 |
-Peso              |  8,16Kg                                     |  17Kg                                      |
-RAM               |  -                                          |  8GB                                       |
-Conexiones        |  Ethernet, Fast Ethernet                    |  Ethernet, Fast Ethernet, Gigabit Ethernet |
-Metetodo. Autent. |  DES, T.DES, RSA, RC4, TLS 1.0, SSL 3.0/2.0 |  SSL                                       |
+|                   |  Cisco CSS 11501                            | Brocade ServerIron ADX 1000                |
+| ----------------- | ----------------------------------------    | ------------------------------------------ |
+| Precio            |  £4.019.99                                  |  £6,479.99                                 |
+| Peso              |  8,16Kg                                     |  17Kg                                      |
+| RAM               |  -                                          |  8GB                                       |
+| Conexiones        |  Ethernet, Fast Ethernet                    |  Ethernet, Fast Ethernet, Gigabit Ethernet |
+| Metetodo. Autent. |  DES, T.DES, RSA, RC4, TLS 1.0, SSL 3.0/2.0 |  SSL                                       |
 
 Entre otras que se pueden encontrar [aqui](https://www.pcworldbusiness.co.uk/catalogue/item/P103339P#tabss)
 y [aqui](https://www.pcworldbusiness.co.uk/catalogue/item/P186722P#tabss)
