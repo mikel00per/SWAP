@@ -128,47 +128,88 @@ comerciales para servidores de almacenamiento.
 ## Tema 3 | La red de una granja web
 
 **Ejercicio 1**: Buscar con qué órdenes de terminal o herramientas gráficas
-podemos configurar bajo Windows y bajo Linux el
-enrutamiento del tráfico de un servidor para pasar el
-tráfico desde una subred a otra.
+podemos configurar bajo Windows y bajo Linux el enrutamiento del tráfico de un
+servidor para pasar el tráfico desde una subred a otra.
 
+  - Windows: route ADD "IP RED" MASK "MASCARA" “PUERTA DE ENLACE”
+  - Linux: route add default gw "PUERTA DE ENLACE"
+           route add -net "SEGUNDA SUBRED" netmask "MASCARA" gw "PUERTA DE ENLACE 2º SUBRED"
 
 **Ejercicio 2**: Buscar con qué órdenes de terminal o herramientas gráficas
 podemos configurar bajo Windows y bajo Linux el filtrado
 y bloqueo de paquetes.
 
+  - Windows: Con herramienta grafica: Para abrir Firewall de Windows, hacer
+  click en el botón Inicio > Panel de control. En el cuadro de búsqueda,
+  escribir firewall y hacer clic en Firewall de Windows. (no uso windows así
+  que no lo he probado)
+
+  - Linux: Con el uso de iptables, en las practicas se explica su uso.
 
 --------------------------------------------------------------------------------
 
 ## Tema 4 | Balanceo de carga
 
 **Ejercicio 1**: Buscar información sobre cuánto costaría en la actualidad
-un mainframe. Comparar precio y potencia entre esa
-máquina y una granja web de unas prestaciones similares.
+un mainframe. Comparar precio y potencia entre esa máquina y una granja web
+de unas prestaciones similares.
 
+Normalmente ya no se suelen utilizar mainframes como tal (multiprocesador),
+se suelen usar nodos (multicomputadores) pues son mas tolerantes a fallos, más
+fáciles de ampliar.
 
 **Ejercicio 2**: Buscar información sobre precio y características de
-balanceadores hardware específicos. Compara las
-prestaciones que ofrecen unos y otros.
+balanceadores hardware específicos. Compara las prestaciones que ofrecen unos y
+otros.
 
+                  |  Cisco CSS 11501                            | Brocade ServerIron ADX 1000                |
+----------------- | ----------------------------------------    | ------------------------------------------ |
+Precio            |  £4.019.99                                  |  £6,479.99                                 |
+Peso              |  8,16Kg                                     |  17Kg                                      |
+RAM               |  -                                          |  8GB                                       |
+Conexiones        |  Ethernet, Fast Ethernet                    |  Ethernet, Fast Ethernet, Gigabit Ethernet |
+Metetodo. Autent. |  DES, T.DES, RSA, RC4, TLS 1.0, SSL 3.0/2.0 |  SSL                                       |
+
+Entre otras que se pueden encontrar [aqui](https://www.pcworldbusiness.co.uk/catalogue/item/P103339P#tabss)
+y [aqui](https://www.pcworldbusiness.co.uk/catalogue/item/P186722P#tabss)
 
 **Ejercicio 3**: Buscar información sobre los métodos de balanceo que
 implementan los dispositivos recogidos en el ejercicio 2.
+
+Los métodos usados para Brocade ServerIron ADX 1000 son:
+1. Least Connections Predictor
+2. Weighted Round Robin Predictor
+3. Round Robin Predictor
+4. Weighted Predictor and Enhanced Weighted Predictor
+5. Dynamic Weighted Predictor
+6. Dynamic-Weighted Direct
+7. Dynamic-Weighted Reverse
+
+Más información (aqui)[http://community.brocade.com/t5/Application-Delivery-ADX/Load-Balancing-Distribution-Predictors-with-ServerIron/ta-p/3839]
+
+Por otro lado para Cisco CSS 11501:
+1. Round Robin
+2. Weighted Round Robin
+3. Least Connections/Bytes
+4. ArrowPoint Content Aware (ACA)
+5. Otros: urlhash, domainhash, url, domain, srcip, and destip
+
+Más información (aqui)[http://www.cisco.com/c/en/us/support/docs/application-networking-services/css-11500-series-content-services-switches/28862-methods-load-bal.html#services]
 
 
 **Ejercicio 4**: Instala y configura en una máquina virtual el balanceador
 ZenLoadBalancer.
 
 
-**Ejercicio 5**: Probar las diferentes maneras de redirección HTTP.
-¿Cuál es adecuada y cuál no lo es para hacer balanceo de
-carga global? ¿Por qué?
+**Ejercicio 5**: Probar las diferentes maneras de redirección HTTP. ¿Cuál es
+adecuada y cuál no lo es para hacer balanceo de carga global? ¿Por qué?
 
 
 **Ejercicio 6**: Buscar información sobre los bloques de IP para los distintos
 países o continentes. Implementar en JavaScript o PHP la detección de la zona
 desde donde se conecta un usuario.
 
+_No conozco ninguno de estos lenguajes._
 
 **Ejercicio 7**: Buscar información sobre métodos y herramientas para
 implementar GSLB.
