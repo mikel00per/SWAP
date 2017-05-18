@@ -170,8 +170,8 @@ otros.
 | Conexiones        |  Ethernet, Fast Ethernet                    |  Ethernet, Fast Ethernet, Gigabit Ethernet |
 | Metetodo. Autent. |  DES, T.DES, RSA, RC4, TLS 1.0, SSL 3.0/2.0 |  SSL                                       |
 
-Entre otras que se pueden encontrar [aqui](https://www.pcworldbusiness.co.uk/catalogue/item/P103339P#tabss)
-y [aqui](https://www.pcworldbusiness.co.uk/catalogue/item/P186722P#tabss)
+Entre otras que se pueden encontrar ![aqui](https://www.pcworldbusiness.co.uk/catalogue/item/P103339P#tabss)
+y ![aqui](https://www.pcworldbusiness.co.uk/catalogue/item/P186722P#tabss)
 
 **Ejercicio 3**: Buscar información sobre los métodos de balanceo que
 implementan los dispositivos recogidos en el ejercicio 2.
