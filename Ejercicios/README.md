@@ -200,10 +200,13 @@ Más información [aqui](http://www.cisco.com/c/en/us/support/docs/application-n
 **Ejercicio 4**: Instala y configura en una máquina virtual el balanceador
 ZenLoadBalancer.
 
+Aquó podemos encontrar un tutorial sobre comohacerlo, personalmente no lo he
+realizado. `http://c-nergy.be/blog/?p=1485`
 
 **Ejercicio 5**: Probar las diferentes maneras de redirección HTTP. ¿Cuál es
 adecuada y cuál no lo es para hacer balanceo de carga global? ¿Por qué?
 
+_No entiendo la pregunta_ 
 
 **Ejercicio 6**: Buscar información sobre los bloques de IP para los distintos
 países o continentes. Implementar en JavaScript o PHP la detección de la zona
@@ -214,6 +217,29 @@ _No conozco ninguno de estos lenguajes._
 **Ejercicio 7**: Buscar información sobre métodos y herramientas para
 implementar GSLB.
 
+Algunos de estos métodos son:
+1. Round Robin
+2. Least Connections
+3. Least Response Time
+4. Least Bandwidth
+5. Least Packets
+6. Source IP Hash
+7. Custom Load
+8. Round Trip Time (RTT)
+9. Static Proximity
+
+Herramientas:
+ - NetScaler Gateway
+ - NetScaler
+
+Componentes necesarios:
+ - Global Server Load Balancing Domain: The Global Server Load Balancing Domain is a publicly resolvable domain or zone for which the Global Server Load Balancing setup is responsible. You can set up a NetScaler appliance to be the Authoritative Server for this domain or to proxy the information to an internal DNS server.
+
+ - Global Server Load Balancing Site: The Global Server Load Balancing Site is the top-level entity for the Global Server Load Balancing communications. The information used when configuring the site is used for linking LOCAL sites to REMOTE sites and sharing monitoring data by using the Metric Exchange Protocol (MEP). The IP address used must be owned by the NetScaler appliance, such as subnet IP (SNIP), and must use TCP port 3011.
+
+ - Global Server Load Balancing VServer: The Global Server Load Balancing VServer is used as the decision intermediary for directing client requests to the Load Balancing VServers of one of the GSLB site. The Global Server Load Balancing VServer is bound to a Global Server Load Balancing service.
+
+ - Global Server Load Balancing Service: The Global Server Load Balancing Service is basically a monitoring link to the Load Balancing VServer. The Global Server Load Balancing Service monitors the link to the Load Balancing VServer that is created on the NetScaler appliance. The state of the local Global Server Load Balancing Service depends on the corresponding local virtual server state.
 
 --------------------------------------------------------------------------------
 
