@@ -205,6 +205,6 @@ su estado, y qué programa o demonio lo ocupa.
 
 **Ejercicio 3**: Buscar información acerca de los tipos de ataques más
 comunes en servidores web (p.ej. secuestros de sesión). Detallar en qué
-consisten, y cómo se pueden evitar. 
+consisten, y cómo se pueden evitar.   
 
 --------------------------------------------------------------------------------
