@@ -57,7 +57,7 @@ las demás, en el balanceador y en la otra máquina servidora ya sea por rsync o
 de administrador para el directorio apache2.
 
 Por último modificar el fichero de configuración antes mencionado indicando el
-nuevo nombre de los archivos y su ubicación. 
+nuevo nombre de los archivos y su ubicación.
 
 ## Configuración del cortafuegos
 Para configurar el cortafuegos existen muchas tipos de configuraciones, yo he
@@ -70,7 +70,7 @@ El script usado es el siguiente
     #!/bin/bash
     # (1) Eliminar todas las reglas (configuración limpia)
     iptables -F
-    iptables -X
+    iptables -X  
     iptables -Z
     iptables -t nat -F
     # (2) Política por defecto: denegar todo el tráfico
