@@ -26,7 +26,10 @@ balancearemos los servidores HTTP que tenemos configurados.
 De esta forma conseguiremos una infraestructura redundante y de alta disponibilidad.
 
 ## Practica 4 | Asegurar la granja web
-El objetivo de esta práctica es llevar a cabo la configuración de seguridad de la granja web. Para ello, llevaremos a cabo las siguientes tareas para ello instalaremos un certificado SSL para configurar le aceso HTTPS a los servidores y configuraremos el cortafuegos.
+El objetivo de esta práctica es llevar a cabo la configuración de seguridad de la
+granja web. Para ello, llevaremos a cabo las siguientes tareas para ello
+instalaremos un certificado SSL para configurar le aceso HTTPS a los servidores y
+configuraremos el cortafuegos.
 
 ## Practica 5 | Replicación de bases de datos MySQL
 Tendremos posiblemente decenas de clientes y servicios parados sin posibilidad de
