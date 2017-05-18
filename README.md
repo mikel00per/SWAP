@@ -28,6 +28,25 @@ De esta forma conseguiremos una infraestructura redundante y de alta disponibili
 ## Practica 4 | Asegurar la granja web
 El objetivo de esta práctica es llevar a cabo la configuración de seguridad de la granja web. Para ello, llevaremos a cabo las siguientes tareas para ello instalaremos un certificado SSL para configurar le aceso HTTPS a los servidores y configuraremos el cortafuegos.
 
-## Practica 5 |  
+## Practica 5 | Replicación de bases de datos MySQL
+Tendremos posiblemente decenas de clientes y servicios parados sin posibilidad de
+recuperar sus datos si no hemos preparado un buen plan de contingencias. Tener un
+servidor de backup con MySQL actuando como esclavo de replicación es una solución
+asequible y no consume demasiado ancho de banda en un sitio web de tráfico normal,
+además de que no afecta al rendimiento del maestro en el sistema en producción.
+Los objetivos concretos de esta práctica son:
+1. Copiar archivos de copia de seguridad mediante ssh.
+2. Clonar manualmente BD entre máquinas.
+3. Configurar la estructura maestro-esclavo entre dos máquinas para realizar el
+clonado automático de la información.
 
-## Practica 6 |
+## Practica 6 | Discos en RAID
+En esta práctica configuraremos dos discos en RAID 1 por software, usando una
+maquina virtual con Ubuntu server. Esta configuración RAID ofrece una gran
+seguridad al replicar los datos en los dos discos.
+
+Los objetivos concretos de esta práctica son:
+1. Configurar dos discos en RAID 1. Los discos se añadirán a un sistema ya
+instalado y funcionando, de forma que en total tendremos tres discos.
+2. Hacer pruebas de retirar y añadir un disco “en caliente”, y comprobar que el
+RAID sigue funcionando correctamente.
