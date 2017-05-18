@@ -1,4 +1,5 @@
 ## Tema 1 | Introducción y conceptos básicos
+
 **Ejercicio 1**: Buscar información sobre las tareas o servicios web comentados
 a principio del tema.
 
@@ -64,6 +65,7 @@ a principio del tema.
 --------------------------------------------------------------------------------
 
 ## Tema 2 | Alta disponibilidad y escalabilidad en servidores web
+
 **Ejercicio 1**:  Calcular la disponibilidad del sistema si tenemos dos réplicar
 de cada elemento (en total 3 elementos en cada subsistema).
 
@@ -125,10 +127,84 @@ comerciales para servidores de almacenamiento.
 
 ## Tema 3 | La red de una granja web
 
+**Ejercicio 1**: Buscar con qué órdenes de terminal o herramientas gráficas
+podemos configurar bajo Windows y bajo Linux el
+enrutamiento del tráfico de un servidor para pasar el
+tráfico desde una subred a otra.
+
+
+**Ejercicio 2**: Buscar con qué órdenes de terminal o herramientas gráficas
+podemos configurar bajo Windows y bajo Linux el filtrado
+y bloqueo de paquetes.
+
 
 --------------------------------------------------------------------------------
 
 ## Tema 4 | Balanceo de carga
 
+**Ejercicio 1**: Buscar información sobre cuánto costaría en la actualidad
+un mainframe. Comparar precio y potencia entre esa
+máquina y una granja web de unas prestaciones similares.
+
+
+**Ejercicio 2**: Buscar información sobre precio y características de
+balanceadores hardware específicos. Compara las
+prestaciones que ofrecen unos y otros.
+
+
+**Ejercicio 3**: Buscar información sobre los métodos de balanceo que
+implementan los dispositivos recogidos en el ejercicio 2.
+
+
+**Ejercicio 4**: Instala y configura en una máquina virtual el balanceador
+ZenLoadBalancer.
+
+
+**Ejercicio 5**: Probar las diferentes maneras de redirección HTTP.
+¿Cuál es adecuada y cuál no lo es para hacer balanceo de
+carga global? ¿Por qué?
+
+
+**Ejercicio 6**: Buscar información sobre los bloques de IP para los distintos
+países o continentes. Implementar en JavaScript o PHP la detección de la zona
+desde donde se conecta un usuario.
+
+
+**Ejercicio 7**: Buscar información sobre métodos y herramientas para
+implementar GSLB.
+
+
+--------------------------------------------------------------------------------
+
+## Tema 5 | Medir pestraciones
+
+**Ejercicio 1**: Buscar información sobre cómo calcular el número de
+conexiones por segundo.
+
+
+**Ejercicio 2**: Revisar los análisis de tráfico que se ofrecen en: http://bit.ly/1g0dkKj
+Instalar wireshark y observar cómo fluye el tráfico de red en uno de los
+servidores web mientras se le hacen peticiones HTTP.
+
+**Ejercicio 3**: Buscar información sobre características, disponibilidad para
+diversos SO, etc de herramientas para monitorizar las prestaciones de un servidor.
+
+--------------------------------------------------------------------------------
+
+## Tema 6 | Asegurar el sistema web
+
+**Ejercicio 1**: Aplicar con iptables una política de denegar todo el tráfico en
+una de las máquinas de prácticas. Comprobar el funcionamiento. Aplicar con
+iptables una política de permitir todo el tráfico en una de las máquinas de
+prácticas. Comprobar el funcionamiento.
+
+
+**Ejercicio 2**: Comprobar qué puertos tienen abiertos nuestras máquinas,
+su estado, y qué programa o demonio lo ocupa.
+
+
+**Ejercicio 3**: Buscar información acerca de los tipos de ataques más
+comunes en servidores web (p.ej. secuestros de sesión). Detallar en qué
+consisten, y cómo se pueden evitar. 
 
 --------------------------------------------------------------------------------
