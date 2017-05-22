@@ -21,7 +21,7 @@ Para instalalo introduciremos por último
 
 Tras esto nos pedirá cierta información como el nombre, ciudad, correo, etc.
 
-![install-ssl](http://)
+![install-ssl](https://github.com/mikel00per/SWAP/blob/master/Practica%204/install-ssl.png)
 
 Ahora debemos modificar ciertos archivos de apache para indicar cual es nuestro
 certificado para que apache lo lea y lo tenga en cuenta. Para ello editaremos el
@@ -30,7 +30,7 @@ SSLCertificateKeyFile por las rutas del key y del certificado.
 
     nano /etc/apache2/sites-available/default-ssl.conf
 
-![conf-ssl](http://)
+![conf-ssl](https://github.com/mikel00per/SWAP/blob/master/Practica%204/ssl-conf.png)
 
 Posteriormente activamos el sitio y reiniciamos Apache.
     a2ensite default-ssl
@@ -46,7 +46,7 @@ nuestro certificado nos podemos cepcionar con ello con el comando curl.
     curl -k https:<ip-maquina>
 
 Aquí se puede ver:
-![comprobacion-ssl](https://)
+![comprobacion-ssl](https://github.com/mikel00per/SWAP/blob/master/Practica%204/comprobacion-ssl.png)
 
 Por último solo queda copiar las claves y certificados de esta máquina en todas
 las demás, en el balanceador y en la otra máquina servidora ya sea por rsync o por ssh.
@@ -71,37 +71,37 @@ El script usado es el siguiente
     # (1) Eliminar todas las reglas (configuración limpia)
     iptables -F
     iptables -X  
-    iptables -Z
-    iptables -t nat -F
+
     # (2) Política por defecto: denegar todo el tráfico
     iptables -P INPUT DROP
     iptables -P OUTPUT DROP
     iptables -P FORWARD DROP
+
     # (3) Permitir cualquier acceso desde localhost (interface lo)
     iptables -A INPUT -i lo -j ACCEPT
     iptables -A OUTPUT -o lo -j ACCEPT
-    # (4) Abrir el puerto 22 para permitir el acceso por SSH
+
+    # (4) Permitir la salida con conexiones establecidas y relacionadas
+    iptables -A INPUT  -m state --state ESTABLISHED,RELATED -j ACCEPT
+    iptables -A OUTPUT -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+
+
+    # (5) Puerto 22 para ssh
     iptables -A INPUT -p tcp --dport 22 -j ACCEPT
     iptables -A OUTPUT -p tcp --sport 22 -j ACCEPT
-    # (5) Abrir los puertos HTTP (80) de servidor web
+
+    # (6) Abrir los puertos HTTP/HTTPS
     iptables -A INPUT -p tcp --dport 80 -j ACCEPT
     iptables -A OUTPUT -p tcp --sport 80 -j ACCEPT
+    iptables -A INPUT -p tcp --dport 443 -j ACCEPT
+    iptables -A OUTPUT -p tcp --sport 443 -j ACCEPT
 
 
+Tras esto deberemos hacer que el script se ejecute en cada arranque o cada
+cierto tiempo. Para ello lo añadiremos al rclocal del usuario, para ello:
 
+    sudo nano /etc/rc.local
 
+donde tendremos que añadir al final lo siente:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-k
+    sh /home/usuario/script.sh
