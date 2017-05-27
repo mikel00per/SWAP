@@ -16,7 +16,7 @@ El procedimiento en este apartado lo haremos sobre nuestra máquina servidora
 numero uno. Lo primero que haremos será crear en la consola de mysql con el
 comando
 
-    mysql -uroot -p
+    mysql -u root -p
 
 Tras esto crearemos la base de datos llamada contactos
 
