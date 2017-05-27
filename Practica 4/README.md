@@ -85,7 +85,6 @@ El script usado es el siguiente
     iptables -A INPUT  -m state --state ESTABLISHED,RELATED -j ACCEPT
     iptables -A OUTPUT -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
 
-
     # (5) Puerto 22 para ssh
     iptables -A INPUT -p tcp --dport 22 -j ACCEPT
     iptables -A OUTPUT -p tcp --sport 22 -j ACCEPT
@@ -94,14 +93,14 @@ El script usado es el siguiente
     iptables -A INPUT -p tcp --dport 80 -j ACCEPT
     iptables -A OUTPUT -p tcp --sport 80 -j ACCEPT
     iptables -A INPUT -p tcp --dport 443 -j ACCEPT
-    iptables -A OUTPUT -p tcp --sport 443 -j ACCEPT
+    iptables -A OUTPUT -p tcp --sport 443 -j ACCEPT  
 
+Tras esto deberemos hacer que el script se ejecute en cada arranque. Para ello
+lo añadiremos al init.d para que se ejecute al iniciar con el resto de
+componentes en el sistema.
 
-Tras esto deberemos hacer que el script se ejecute en cada arranque o cada
-cierto tiempo. Para ello lo añadiremos al rclocal del usuario, para ello:
+    sudo mv <ruta_al_script>/script.sh /etc/init.d/
 
-    sudo nano /etc/rc.local
+Tras esto introducimos el script en el crontab para que lo ejecute:
 
-donde tendremos que añadir al final lo siente:
-
-    sh /home/usuario/script.sh
+    sudo crontab -e
