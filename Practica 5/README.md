@@ -1,4 +1,5 @@
-#Practica 5 | Replicación Base de Datos MySQL
+# Practica 5 | Replicación Base de Datos MySQL
+
 Tendremos posiblemente decenas de clientes y servicios parados sin posibilidad de
 recuperar sus datos si no hemos preparado un buen plan de contingencias. Tener un
 servidor de backup con MySQL actuando como esclavo de replicación es una solución
