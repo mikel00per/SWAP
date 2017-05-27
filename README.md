@@ -6,6 +6,11 @@ Antonio Miguel Morillo Chica.
 Ejercicios de las clases de teoría. Los ejercicios se pueden encontrar en las
 transparencias.
 
+## Trabajo Teoría
+Trabajo realizado por Alberto Rivera Peña, Antonio Jimenez Arguello y Antonio 
+Miguel Morillo Chica sobre los honeypots. Una medida para el aprendizaje sobre
+incrusiones y ataques a servidores además de una medida de seguridad real. 
+
 ## Practica 1 | Preparación de herramientas
 Crearemos dos máquinas virtuales con ubuntu server que deberán poder comunicarse
 internamente. Modificaremos pues las ips para que sean distintas y estáticas.
