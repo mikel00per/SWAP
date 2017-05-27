@@ -6,11 +6,10 @@ servidor de backup con MySQL actuando como esclavo de replicación es una soluci
 asequible y no consume demasiado ancho de banda en un sitio web de tráfico normal,
 además de que no afecta al rendimiento del maestro en el sistema en producción.
 Los objetivos concretos de esta práctica son:
-  1. Copiar archivos de copia de seguridad mediante ssh.
-  2. Clonar manualmente BD entre máquinas.
-  3. Configurar la estructura maestro-esclavo entre dos máquinas para realizar el
-  clonado automático de la información.
 
+1. Copiar archivos de copia de seguridad mediante ssh.
+2. Clonar manualmente BD entre máquinas.
+3. Configurar la estructura maestro-esclavo entre dos máquinas para realizar el clonado automático de la información.
 
 ## Creando una Base de datos
 El procedimiento en este apartado lo haremos sobre nuestra máquina servidora
