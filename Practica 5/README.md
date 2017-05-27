@@ -128,13 +128,26 @@ lo haremos en la maquina maestra, en nuestro caso la maquina 1.
     mysql> FLUSH TABLES WITH READ LOCK;
 
 
+En la máquina esclava escribimos la sentencia para cambiar e identificar
+al maestro, además iniciamos al esclavo.
+
+    mysql> CHANGE MASTER TO MASTER_HOST='192.168.31.200', MASTER_USER='esclavo', MASTER_PASSWORD='esclavo', MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=501, MASTER_PORT=3306;
+    mysql> START SLAVE;
+
+Aqui podemos ver un ejemplo de ello en mis máquinas:
+
+![mysql-slave](https://github.com/mikel00per/SWAP/blob/master/Practica%205/mysql-slave.png)
 
 
+Por último volvemos al maestro y activamos sus tablas
 
+    mysql> UNLOCK TABLES;
 
+Para comprobar que todo va correctamente en el esclavo escribimos lo siguiente
 
+    mysql> SHOW SLAVE STATUS\
 
+Como podemos observar en la variable Seconds_Behind_Master (es la que nos importa)
+su valor es 0 por lo que hay conexion.
 
-
-
-k
+![status-slave](https://github.com/mikel00per/SWAP/blob/master/Practica%205/status-slave.png)
