@@ -37,7 +37,7 @@ e intuitiva:
 Ahora vamos a mostrar todo el contenido de nuestra tabla datos, en mi caso
 he introducido algunos contactos.
 
-![create-db](http://)
+![create-db](https://github.com/mikel00per/SWAP/blob/master/Practica%205/create-db.png)
 
 ## Replicando una Base de Datos de MySQL
 
@@ -59,7 +59,7 @@ Para desbloquear la base de datos deberemos de hacer:
     mysql> UNLOCK TABLES;
     mysql> exit
 
-![respaldo-bd](http://)
+![respaldo-bd](https://github.com/mikel00per/SWAP/blob/master/Practica%205/respaldo-bd.png)
 
 ## Replicando copia de BD en una segunda máquina a mano
 Tras haber hecho el respaldo inicial vamos ahora a copiarlo a una segunda máquina
@@ -75,7 +75,7 @@ la maquina2, hay que entender que las máquinas han de verse
 
     scp maquina1:/tmp/ejemplodb.sql /tmp/
 
-![copiado-realizado](http://)
+![copiado-realizado](https://github.com/mikel00per/SWAP/blob/master/Practica%205/copiado-realizado.png)
 
 
 ## Replicando copia de BD en una segunda máquina con Maestro-Esclavo
@@ -107,7 +107,7 @@ La configuración para la máquina2 será la siguiente:
     log_bin = /var/log/mysql/bin.log
     /etc/init.d/mysql restart
 
-![conf-mysql](http://)
+![conf-mysql](https://github.com/mikel00per/SWAP/blob/master/Practica%205/conf-mysql.png)
 
 **NOTA**: Solo si estamos en versiones inferiores a la 5.5 deberemos de modificar
 lo siguiente
